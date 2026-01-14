@@ -1,0 +1,43 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginToAccount()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Log into your account</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Login</mat-label>
+            <input matInput formControlName="login" [type]="'text'" />
+
+            @if (loginForm.controls["login"].hasError("required")) {
+              <mat-error>Login is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" />
+
+            @if (loginForm.controls["password"].hasError("required")) {
+              <mat-error>Password is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      @if (loginForm.hasError("invalid")) {
+        <mat-error>Invalid login or password</mat-error>
+      }
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button matButton="elevated" color="primary" type="submit">Log in</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

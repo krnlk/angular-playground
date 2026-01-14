@@ -34,6 +34,7 @@ export class NavbarComponent {
 
   pagesList: NavigablePage[] = [
     { path: 'register', name: 'Register' },
+    { path: 'login', name: 'Login' },
     { path: '', name: 'Home' },
   ];
 

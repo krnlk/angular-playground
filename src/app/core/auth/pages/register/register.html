@@ -47,7 +47,7 @@
         <div class="col">
           <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
-            <input matInput formControlName="password" />
+            <input matInput formControlName="password" type="password" />
 
             @if (registerForm.controls["password"].hasError("required")) {
               <mat-error>Password is <strong>required</strong></mat-error>
@@ -70,7 +70,7 @@
         <div class="col">
           <mat-form-field class="full-width">
             <mat-label>Repeat password</mat-label>
-            <input matInput formControlName="repeatPassword" />
+            <input matInput formControlName="repeatPassword" type="password" />
 
             @if (registerForm.controls["repeatPassword"].hasError("required")) {
               <mat-error
