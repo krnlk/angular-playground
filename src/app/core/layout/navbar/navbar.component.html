@@ -11,7 +11,7 @@
 
     <mat-nav-list>
       @for (page of pagesList; track page.name) {
-      <a mat-list-item href="{{ page.path }}">{{ page.name }}</a>
+        <a mat-list-item href="{{ page.path }}">{{ page.name }}</a>
       }
     </mat-nav-list>
   </mat-sidenav>
@@ -19,14 +19,14 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       @if (isHandset$ | async) {
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        matIconButton
-        (click)="drawer.toggle()"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          matIconButton
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
       }
 
       <span>angular-playground</span>

@@ -1,7 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCardModule } from '@angular/material/card';
 import {
   AbstractControl,
   FormBuilder,
@@ -12,8 +9,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-register',
@@ -59,12 +59,12 @@ export class Register {
       repeatPassword: [null, [Validators.required]],
       dateOfBirth: [null, [Validators.required, this.dateOfBirthValidator()]],
     },
-    { validators: this.repeatPasswordValidator('password', 'repeatPassword') }
+    { validators: this.repeatPasswordValidator('password', 'repeatPassword') },
   );
 
   private repeatPasswordValidator(
     password: string,
-    repeatPassword: string
+    repeatPassword: string,
   ): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const passwordControl = control.get(password);
