@@ -1,22 +1,26 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <mat-card-header>
-      <mat-card-title>Registration information</mat-card-title>
+      <mat-card-title>{{ "registerPage.header" | translate }}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <mat-label>Email</mat-label>
+            <mat-label>{{ "registerPage.emailLabel" | translate }}</mat-label>
             <input matInput formControlName="email" />
 
             @if (registerForm.controls["email"].hasError("required")) {
-              <mat-error>Email is <strong>required</strong></mat-error>
+              <mat-error>{{
+                "registerPage.emailRequired" | translate
+              }}</mat-error>
             }
 
             @if (registerForm.controls["email"].hasError("email")) {
-              <mat-error>Invalid email format</mat-error>
+              <mat-error>{{
+                "registerPage.emailInvalidFormat" | translate
+              }}</mat-error>
             }
           </mat-form-field>
         </div>
@@ -25,19 +29,25 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <mat-label>Login</mat-label>
+            <mat-label>{{ "registerPage.loginLabel" | translate }}</mat-label>
             <input matInput formControlName="login" />
 
             @if (registerForm.controls["login"].hasError("required")) {
-              <mat-error>Login is <strong>required</strong></mat-error>
+              <mat-error>{{
+                "registerPage.loginRequired" | translate
+              }}</mat-error>
             }
 
             @if (registerForm.controls["login"].hasError("minlength")) {
-              <mat-error>Login must be at least 6 characters long</mat-error>
+              <mat-error>{{
+                "registerPage.loginMinLength" | translate
+              }}</mat-error>
             }
 
             @if (registerForm.controls["login"].hasError("maxlength")) {
-              <mat-error>Login must be no longer than 20 characters</mat-error>
+              <mat-error>{{
+                "registerPage.loginMaxLength" | translate
+              }}</mat-error>
             }
           </mat-form-field>
         </div>
@@ -46,21 +56,27 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <mat-label>Password</mat-label>
+            <mat-label>{{
+              "registerPage.passwordLabel" | translate
+            }}</mat-label>
             <input matInput formControlName="password" type="password" />
 
             @if (registerForm.controls["password"].hasError("required")) {
-              <mat-error>Password is <strong>required</strong></mat-error>
+              <mat-error>{{
+                "registerPage.passwordRequired" | translate
+              }}</mat-error>
             }
 
             @if (registerForm.controls["password"].hasError("minlength")) {
-              <mat-error>Password must be at least 8 characters long</mat-error>
+              <mat-error>{{
+                "registerPage.passwordMinLength" | translate
+              }}</mat-error>
             }
 
             @if (registerForm.controls["password"].hasError("maxlength")) {
-              <mat-error
-                >Password must be no longer than 24 characters</mat-error
-              >
+              <mat-error>{{
+                "registerPage.passwordMaxLength" | translate
+              }}</mat-error>
             }
           </mat-form-field>
         </div>
@@ -69,20 +85,24 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <mat-label>Repeat password</mat-label>
+            <mat-label>{{
+              "registerPage.repeatPasswordLabel" | translate
+            }}</mat-label>
             <input matInput formControlName="repeatPassword" type="password" />
 
             @if (registerForm.controls["repeatPassword"].hasError("required")) {
-              <mat-error
-                >Repeat password is <strong>required</strong></mat-error
-              >
+              <mat-error>{{
+                "registerPage.repeatPasswordRequired" | translate
+              }}</mat-error>
             }
             @if (
               registerForm.controls["repeatPassword"].hasError(
                 "passwordMismatch"
               )
             ) {
-              <mat-error>Passwords must match</mat-error>
+              <mat-error>{{
+                "registerPage.repeatPasswordMustMatch" | translate
+              }}</mat-error>
             }
           </mat-form-field>
         </div>
@@ -91,14 +111,18 @@
       <div class="row">
         <div class="col">
           <mat-form-field>
-            <mat-label>Date of birth</mat-label>
+            <mat-label>{{
+              "registerPage.dateOfBirthLabel" | translate
+            }}</mat-label>
             <input
               matInput
               formControlName="dateOfBirth"
               [matDatepicker]="picker"
             />
 
-            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-hint>{{
+              "registerPage.dateOfBirthFormat" | translate
+            }}</mat-hint>
 
             <mat-datepicker-toggle
               matIconSuffix
@@ -108,11 +132,15 @@
             <mat-datepicker #picker></mat-datepicker>
 
             @if (registerForm.controls["dateOfBirth"].hasError("required")) {
-              <mat-error>Birth date is <strong>required</strong></mat-error>
+              <mat-error>{{
+                "registerPage.dateOfBirthRequired" | translate
+              }}</mat-error>
             }
 
             @if (registerForm.controls["dateOfBirth"].hasError("dateOfBirth")) {
-              <mat-error>Must be a valid date</mat-error>
+              <mat-error>{{
+                "registerPage.dateOfBirthInvalid" | translate
+              }}</mat-error>
             }
           </mat-form-field>
         </div>
@@ -120,7 +148,9 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button matButton="elevated" color="primary" type="submit">Submit</button>
+      <button matButton="elevated" color="primary" type="submit">
+        {{ "registerPage.submit" | translate }}
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>

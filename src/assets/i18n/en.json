@@ -1,0 +1,45 @@
+{
+    "language": {
+        "english": "English",
+        "polish": "Polish"
+    },
+    "navbar": {
+        "menuLabel": "Menu",
+        "menu": {
+            "registerPage": "Register",
+            "loginPage": "Login",
+            "homePage": "Home"
+        }
+    },
+    "loginPage": {
+        "header": "Log into your account",
+        "loginLabel": "Login",
+        "loginRequired": "Login is required",
+        "passwordLabel": "Password",
+        "passwordRequired": "Password is required",
+        "invalidInput": "Invalid login or password",
+        "loginButton": "Login"
+    },
+    "registerPage": {
+        "header": "Registration information",
+        "emailLabel": "Email",
+        "emailRequired": "Email is required",
+        "emailInvalidFormat": "Invalid email format",
+        "loginLabel": "Login",
+        "loginRequired": "Login is required",
+        "loginMinLength": "Login must be at least {{ number }} characters long",
+        "loginMaxLength": "Login must be no longer than {{ number }} characters",
+        "passwordLabel": "Password",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least {{ number }} characters long",
+        "passwordMaxLength": "Password must be no longer than {{ number }} characters long",
+        "repeatPasswordLabel": "Repeat password",
+        "repeatPasswordRequired": "Repeat password is required",
+        "repeatPasswordMustMatch": "Passwords must match",
+        "dateOfBirthLabel": "Date of birth",
+        "dateOfBirthFormat": "MM/DD/YYYY",
+        "dateOfBirthRequired": "Birth date is required",
+        "dateOfBirthInvalid": "Must be a valid date",
+        "submit": "Register"
+    }
+}

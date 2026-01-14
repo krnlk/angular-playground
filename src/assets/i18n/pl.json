@@ -1,0 +1,45 @@
+{
+    "language": {
+        "english": "Angielski",
+        "polish": "Polski"
+    },
+    "navbar": {
+        "menuLabel": "Menu",
+        "menu": {
+            "registerPage": "Rejestracja",
+            "loginPage": "Logowanie",
+            "homePage": "Strona główna"
+        }
+    },
+    "loginPage": {
+        "header": "Zaloguj się do swojego konta",
+        "loginLabel": "Login",
+        "loginRequired": "Login jest wymagany",
+        "passwordLabel": "Hasło",
+        "passwordRequired": "Hasło jest wymagane",
+        "invalidInput": "Nieprawidłowy login bądź hasło",
+        "loginButton": "Zaloguj się"
+    },
+    "registerPage": {
+        "header": "Informacje do rejestracji",
+        "emailLabel": "Email",
+        "emailRequired": "Email jest wymagany",
+        "emailInvalidFormat": "Nieprawidłowy format email",
+        "loginLabel": "Login",
+        "loginRequired": "Login jest wymagany",
+        "loginMinLength": "Login musi zawierać minimum {{ number }} znaków",
+        "loginMaxLength": "Login nie może mieć więcej, niż {{ number }} znaków",
+        "passwordLabel": "Hasło",
+        "passwordRequired": "Hasło jest wymagane",
+        "passwordMinLength": "Hasło musi zawierać minimum {{ number }} znaków",
+        "passwordMaxLength": "Hasło nie może mieć więcej, niż {{ number }} znaków",
+        "repeatPasswordLabel": "Powtórz hasło",
+        "repeatPasswordRequired": "Wymagane jest powtórzenie hasła",
+        "repeatPasswordMustMatch": "Hasła muszą się zgadzać",
+        "dateOfBirthLabel": "Data narodzin",
+        "dateOfBirthFormat": "MM/DD/RRRR",
+        "dateOfBirthRequired": "Data narodzin jest wymagana",
+        "dateOfBirthInvalid": "Musi być prawidłowa data",
+        "submit": "Zarejestruj się"
+    }
+}

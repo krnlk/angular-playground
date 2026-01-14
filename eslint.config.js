@@ -34,7 +34,7 @@ module.exports = [
         "warn",
         {
           type: "attribute",
-          prefix: "app",
+          prefix: "pgd",
           style: "camelCase",
         },
       ],
@@ -42,7 +42,7 @@ module.exports = [
         "warn",
         {
           type: "element",
-          prefix: "app",
+          prefix: "pgd",
           style: "kebab-case",
         },
       ],

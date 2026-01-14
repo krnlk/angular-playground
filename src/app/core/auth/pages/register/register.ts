@@ -14,9 +14,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-register',
+  selector: 'pgd-register',
   imports: [
     MatInputModule,
     MatButtonModule,
@@ -25,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatCardModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    TranslatePipe,
   ],
   templateUrl: './register.html',
   styleUrl: './register.scss',

@@ -12,9 +12,10 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'pgd-login',
   imports: [
     MatInputModule,
     MatCardContent,
@@ -27,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    TranslatePipe,
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss',

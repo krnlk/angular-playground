@@ -10,8 +10,10 @@
     <mat-toolbar>Menu</mat-toolbar>
 
     <mat-nav-list>
-      @for (page of pagesList; track page.name) {
-        <a mat-list-item href="{{ page.path }}">{{ page.name }}</a>
+      @for (page of pagesList; track page.translation) {
+        <a mat-list-item [routerLink]="page.path">{{
+          page.translation | translate
+        }}</a>
       }
     </mat-nav-list>
   </mat-sidenav>
@@ -30,6 +32,13 @@
       }
 
       <span>angular-playground</span>
+      <button (click)="changeLanguage('en')">
+        {{ "language.english" | translate }}
+      </button>
+
+      <button (click)="changeLanguage('pl')">
+        {{ "language.polish" | translate }}
+      </button>
     </mat-toolbar>
 
     <main>
