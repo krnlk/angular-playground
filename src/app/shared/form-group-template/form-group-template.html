@@ -1,0 +1,17 @@
+<form [formGroup]="formGroup()" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>{{ title() | translate }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <ng-content select="[card-content]"></ng-content>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button matButton="elevated" color="primary" type="submit">
+        {{ submit() | translate }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

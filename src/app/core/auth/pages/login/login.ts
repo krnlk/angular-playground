@@ -1,34 +1,24 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import {
-  MatCard,
-  MatCardActions,
-  MatCardContent,
-  MatCardHeader,
-  MatCardModule,
-  MatCardTitle,
-} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { TranslatePipe } from '@ngx-translate/core';
+import { FormGroupTemplate } from '../../../../shared/form-group-template/form-group-template';
 
 @Component({
   selector: 'pgd-login',
   imports: [
     MatInputModule,
-    MatCardContent,
-    MatCardTitle,
-    MatCardHeader,
-    MatCard,
-    MatCardActions,
     ReactiveFormsModule,
     MatButtonModule,
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
     TranslatePipe,
+    FormGroupTemplate,
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss',

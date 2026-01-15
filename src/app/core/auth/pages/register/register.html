@@ -1,156 +1,145 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
-    <mat-card-header>
-      <mat-card-title>{{ "registerPage.header" | translate }}</mat-card-title>
-    </mat-card-header>
+<pgd-form-group-template
+  [formGroup]="registerForm"
+  title="registerPage.header"
+  submit="registerPage.submit"
+  (submitClicked)="onSubmit()"
+>
+  <ng-container card-content>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-label>{{ "registerPage.emailLabel" | translate }}</mat-label>
+          <input matInput formControlName="email" />
 
-    <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-label>{{ "registerPage.emailLabel" | translate }}</mat-label>
-            <input matInput formControlName="email" />
+          @if (registerForm.controls["email"].hasError("required")) {
+            <mat-error>{{
+              "registerPage.emailRequired" | translate
+            }}</mat-error>
+          }
 
-            @if (registerForm.controls["email"].hasError("required")) {
-              <mat-error>{{
-                "registerPage.emailRequired" | translate
-              }}</mat-error>
-            }
-
-            @if (registerForm.controls["email"].hasError("email")) {
-              <mat-error>{{
-                "registerPage.emailInvalidFormat" | translate
-              }}</mat-error>
-            }
-          </mat-form-field>
-        </div>
+          @if (registerForm.controls["email"].hasError("email")) {
+            <mat-error>{{
+              "registerPage.emailInvalidFormat" | translate
+            }}</mat-error>
+          }
+        </mat-form-field>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-label>{{ "registerPage.loginLabel" | translate }}</mat-label>
-            <input matInput formControlName="login" />
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-label>{{ "registerPage.loginLabel" | translate }}</mat-label>
+          <input matInput formControlName="login" />
 
-            @if (registerForm.controls["login"].hasError("required")) {
-              <mat-error>{{
-                "registerPage.loginRequired" | translate
-              }}</mat-error>
-            }
+          @if (registerForm.controls["login"].hasError("required")) {
+            <mat-error>{{
+              "registerPage.loginRequired" | translate
+            }}</mat-error>
+          }
 
-            @if (registerForm.controls["login"].hasError("minlength")) {
-              <mat-error>{{
-                "registerPage.loginMinLength" | translate: { number: 6 }
-              }}</mat-error>
-            }
+          @if (registerForm.controls["login"].hasError("minlength")) {
+            <mat-error>{{
+              "registerPage.loginMinLength" | translate: { number: 6 }
+            }}</mat-error>
+          }
 
-            @if (registerForm.controls["login"].hasError("maxlength")) {
-              <mat-error>{{
-                "registerPage.loginMaxLength" | translate: { number: 20 }
-              }}</mat-error>
-            }
-          </mat-form-field>
-        </div>
+          @if (registerForm.controls["login"].hasError("maxlength")) {
+            <mat-error>{{
+              "registerPage.loginMaxLength" | translate: { number: 20 }
+            }}</mat-error>
+          }
+        </mat-form-field>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-label>{{
-              "registerPage.passwordLabel" | translate
-            }}</mat-label>
-            <input matInput formControlName="password" type="password" />
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-label>{{ "registerPage.passwordLabel" | translate }}</mat-label>
+          <input matInput formControlName="password" type="password" />
 
-            @if (registerForm.controls["password"].hasError("required")) {
-              <mat-error>{{
-                "registerPage.passwordRequired" | translate
-              }}</mat-error>
-            }
+          @if (registerForm.controls["password"].hasError("required")) {
+            <mat-error>{{
+              "registerPage.passwordRequired" | translate
+            }}</mat-error>
+          }
 
-            @if (registerForm.controls["password"].hasError("minlength")) {
-              <mat-error>{{
-                "registerPage.passwordMinLength" | translate: { number: 8 }
-              }}</mat-error>
-            }
+          @if (registerForm.controls["password"].hasError("minlength")) {
+            <mat-error>{{
+              "registerPage.passwordMinLength" | translate: { number: 8 }
+            }}</mat-error>
+          }
 
-            @if (registerForm.controls["password"].hasError("maxlength")) {
-              <mat-error>{{
-                "registerPage.passwordMaxLength" | translate: { number: 24 }
-              }}</mat-error>
-            }
-          </mat-form-field>
-        </div>
+          @if (registerForm.controls["password"].hasError("maxlength")) {
+            <mat-error>{{
+              "registerPage.passwordMaxLength" | translate: { number: 24 }
+            }}</mat-error>
+          }
+        </mat-form-field>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-label>{{
-              "registerPage.repeatPasswordLabel" | translate
-            }}</mat-label>
-            <input matInput formControlName="repeatPassword" type="password" />
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-label>{{
+            "registerPage.repeatPasswordLabel" | translate
+          }}</mat-label>
+          <input matInput formControlName="repeatPassword" type="password" />
 
-            @if (registerForm.controls["repeatPassword"].hasError("required")) {
-              <mat-error>{{
-                "registerPage.repeatPasswordRequired" | translate
-              }}</mat-error>
-            }
-            @if (
-              registerForm.controls["repeatPassword"].hasError(
-                "passwordMismatch"
-              )
-            ) {
-              <mat-error>{{
-                "registerPage.repeatPasswordMustMatch" | translate
-              }}</mat-error>
-            }
-          </mat-form-field>
-        </div>
+          @if (registerForm.controls["repeatPassword"].hasError("required")) {
+            <mat-error>{{
+              "registerPage.repeatPasswordRequired" | translate
+            }}</mat-error>
+          }
+          @if (
+            registerForm.controls["repeatPassword"].hasError("passwordMismatch")
+          ) {
+            <mat-error>{{
+              "registerPage.repeatPasswordMustMatch" | translate
+            }}</mat-error>
+          }
+        </mat-form-field>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          <mat-form-field>
-            <mat-label>{{
-              "registerPage.dateOfBirthLabel" | translate
-            }}</mat-label>
-            <input
-              matInput
-              formControlName="dateOfBirth"
-              [matDatepicker]="picker"
-            />
+    <div class="row">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>{{
+            "registerPage.dateOfBirthLabel" | translate
+          }}</mat-label>
+          <input
+            matInput
+            formControlName="dateOfBirth"
+            [matDatepicker]="picker"
+          />
 
-            <mat-hint>{{
-              "registerPage.dateOfBirthFormat" | translate
-            }}</mat-hint>
+          <mat-hint>{{
+            "registerPage.dateOfBirthFormat" | translate
+          }}</mat-hint>
 
-            <mat-datepicker-toggle
-              matIconSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
 
-            <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker #picker></mat-datepicker>
 
-            @if (registerForm.controls["dateOfBirth"].hasError("required")) {
-              <mat-error>{{
-                "registerPage.dateOfBirthRequired" | translate
-              }}</mat-error>
-            }
+          @if (registerForm.controls["dateOfBirth"].hasError("required")) {
+            <mat-error>{{
+              "registerPage.dateOfBirthRequired" | translate
+            }}</mat-error>
+          }
 
-            @if (registerForm.controls["dateOfBirth"].hasError("dateOfBirth")) {
-              <mat-error>{{
-                "registerPage.dateOfBirthInvalid" | translate
-              }}</mat-error>
-            }
-          </mat-form-field>
-        </div>
+          @if (registerForm.controls["dateOfBirth"].hasError("dateOfBirth")) {
+            <mat-error>{{
+              "registerPage.dateOfBirthInvalid" | translate
+            }}</mat-error>
+          }
+        </mat-form-field>
       </div>
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button matButton="elevated" color="primary" type="submit">
-        {{ "registerPage.submit" | translate }}
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+    </div>
+  </ng-container>
+</pgd-form-group-template>

@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { TranslatePipe } from '@ngx-translate/core';
+import { FormGroupTemplate } from '../../../../shared/form-group-template/form-group-template';
 import {
   dateOfBirthValidator,
   repeatPasswordValidator,
@@ -28,6 +29,7 @@ import {
     ReactiveFormsModule,
     MatDatepickerModule,
     TranslatePipe,
+    FormGroupTemplate,
   ],
   templateUrl: './register.html',
   styleUrl: './register.scss',
