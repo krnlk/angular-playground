@@ -15,3 +15,17 @@
   top: 0;
   z-index: 1;
 }
+
+.main-content__wrapper {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

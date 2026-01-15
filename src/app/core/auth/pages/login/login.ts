@@ -43,9 +43,6 @@ export class Login {
   });
 
   protected loginToAccount(): void {
-    console.log(this.loginForm.get('login')?.getError('invalid'));
-    console.log(this.loginForm.get('password')?.getError('invalid'));
-
     if (this.loginForm.valid) {
       const loginHTTPRequest = {
         login: this.loginForm.controls['login'].value,

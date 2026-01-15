@@ -40,13 +40,13 @@
 
             @if (registerForm.controls["login"].hasError("minlength")) {
               <mat-error>{{
-                "registerPage.loginMinLength" | translate
+                "registerPage.loginMinLength" | translate: { number: 6 }
               }}</mat-error>
             }
 
             @if (registerForm.controls["login"].hasError("maxlength")) {
               <mat-error>{{
-                "registerPage.loginMaxLength" | translate
+                "registerPage.loginMaxLength" | translate: { number: 20 }
               }}</mat-error>
             }
           </mat-form-field>
@@ -69,13 +69,13 @@
 
             @if (registerForm.controls["password"].hasError("minlength")) {
               <mat-error>{{
-                "registerPage.passwordMinLength" | translate
+                "registerPage.passwordMinLength" | translate: { number: 8 }
               }}</mat-error>
             }
 
             @if (registerForm.controls["password"].hasError("maxlength")) {
               <mat-error>{{
-                "registerPage.passwordMaxLength" | translate
+                "registerPage.passwordMaxLength" | translate: { number: 24 }
               }}</mat-error>
             }
           </mat-form-field>

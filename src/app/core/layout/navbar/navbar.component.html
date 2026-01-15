@@ -1,3 +1,5 @@
+@let currentLanguage = currentLanguage$ | async;
+
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -7,10 +9,10 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>{{ "navbar.menuLabel" | translate }}</mat-toolbar>
 
     <mat-nav-list>
-      @for (page of pagesList; track page.translation) {
+      @for (page of PAGES_LIST; track page.translation) {
         <a mat-list-item [routerLink]="page.path">{{
           page.translation | translate
         }}</a>
@@ -31,18 +33,34 @@
         </button>
       }
 
-      <span>angular-playground</span>
-      <button (click)="changeLanguage('en')">
-        {{ "language.english" | translate }}
-      </button>
+      <div class="header__wrapper">
+        <span>{{ "mainTitle" | translate }}</span>
 
-      <button (click)="changeLanguage('pl')">
-        {{ "language.polish" | translate }}
-      </button>
+        <button matButton [matMenuTriggerFor]="menu">
+          {{ currentLanguage | translate }}
+        </button>
+
+        <mat-menu #menu="matMenu">
+          @for (
+            availableLanguage of AVAILABLE_LANGUAGES;
+            track availableLanguage.languageCode
+          ) {
+            <button
+              mat-menu-item
+              [disabled]="availableLanguage.translation === currentLanguage"
+              (click)="changeLanguage(availableLanguage.languageCode)"
+            >
+              {{ availableLanguage.translation | translate }}
+            </button>
+          }
+        </mat-menu>
+      </div>
     </mat-toolbar>
 
     <main>
-      <router-outlet></router-outlet>
+      <div class="main-content__wrapper">
+        <router-outlet></router-outlet>
+      </div>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
