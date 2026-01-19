@@ -13,10 +13,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FormGroupTemplate } from '../../../../shared/form-group-template/form-group-template';
+import { Auth } from '../../services/auth';
 import {
   dateOfBirthValidator,
   repeatPasswordValidator,
-} from './register.utils';
+} from '../../utils/register.utils';
+import { UserRequest } from '../models/user-request';
 
 @Component({
   selector: 'pgd-register',
@@ -37,6 +39,8 @@ import {
 })
 export class Register {
   private formBuilder = inject(FormBuilder);
+
+  private authService = inject(Auth);
 
   protected registerForm: FormGroup = this.formBuilder.group(
     {
@@ -65,7 +69,19 @@ export class Register {
 
   protected onSubmit(): void {
     if (this.registerForm.valid) {
-      alert('Registered succesfully!');
+      const userRequest: UserRequest = {
+        email: this.registerForm.controls['email'].value,
+        login: this.registerForm.controls['login'].value,
+        password: this.registerForm.controls['password'].value,
+        dateOfBirth: this.registerForm.controls['dateOfBirth'].value,
+      };
+
+      console.log(userRequest);
+
+      this.authService.registerUser(userRequest).subscribe((result) => {
+        console.log(result);
+        alert('Registered succesfully!');
+      });
     }
   }
 }

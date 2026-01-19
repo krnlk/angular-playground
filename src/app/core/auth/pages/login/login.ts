@@ -7,6 +7,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FormGroupTemplate } from '../../../../shared/form-group-template/form-group-template';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'pgd-login',
@@ -27,6 +28,8 @@ import { FormGroupTemplate } from '../../../../shared/form-group-template/form-g
 export class Login {
   private formBuilder = inject(FormBuilder);
 
+  private authService = inject(Auth);
+
   protected loginForm = this.formBuilder.group({
     login: [null, Validators.required],
     password: [null, Validators.required],
@@ -38,8 +41,7 @@ export class Login {
         login: this.loginForm.controls['login'].value,
         password: this.loginForm.controls['password'].value,
       };
-      console.log(loginHTTPRequest);
-      // TODO send HTTP request
+      this.authService.loginUser().subscribe((result) => console.log(result));
 
       // temp
       if (

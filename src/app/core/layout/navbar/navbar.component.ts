@@ -11,7 +11,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { AVAILABLE_LANGUAGES, PAGES_LIST } from './navbar.constants';
+import { AVAILABLE_LANGUAGES, PAGES_LIST } from '../constants/navbar.constants';
 
 @Component({
   selector: 'pgd-navbar',

@@ -1,4 +1,4 @@
-import { NavigablePage, SelectableLanguage } from './navbar.models';
+import { NavigablePage, SelectableLanguage } from '../models/navbar.models';
 
 export const PAGES_LIST: NavigablePage[] = [
   {
